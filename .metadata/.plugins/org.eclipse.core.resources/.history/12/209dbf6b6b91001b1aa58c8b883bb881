@@ -1,0 +1,30 @@
+package Runner;
+
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.support.PageFactory;
+
+import Helper.Pom;
+import StepDefinition.S2;
+
+public class pageobjectManager {
+	public static WebDriver driver;
+	
+	private S2 lp;
+	
+	//private SearchHotel sh;
+	//private bookingpage bp;
+	
+
+	Pom lp1 = new Pom(driver);
+	
+	public void pageObjectManager(WebDriver pdriver) {
+		this.driver=pdriver;
+		PageFactory.initElements(driver, this);
+	}
+	public S2 getLP() {
+		lp= new S2(driver);
+		return lp;
+	}
+	
+
+}

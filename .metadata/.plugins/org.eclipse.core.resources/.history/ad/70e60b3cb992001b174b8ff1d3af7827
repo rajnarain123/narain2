@@ -1,0 +1,26 @@
+package Runner;
+
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.support.PageFactory;
+
+import Helper.Pom;
+import StepDefinition.S2;
+
+public class pageobjectManager {
+	
+	public static WebDriver driver;
+	private Pom lp;
+	
+	public pageobjectManager(WebDriver mdriver) {
+	this.driver= mdriver;
+	PageFactory.initElements(mdriver, this);
+	
+	}
+	
+	public Pom getLp() {
+		lp= new Pom(driver);
+		return lp;
+	}
+	
+
+}
